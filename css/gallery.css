@@ -1,0 +1,268 @@
+/* ===============================
+   GALLERY PAGE – BASE
+================================ */
+.gallery-page {
+  position: relative;
+  padding: 100px 20px 120px;
+  background: linear-gradient(
+    to bottom,
+    #f4ede2,
+    #fbf7ef,
+    #ffffff
+  );
+  overflow: hidden;
+}
+
+/* OM WATERMARK */
+.gallery-bg-om {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 340px;
+  color: rgba(201,162,77,0.06);
+  pointer-events: none;
+}
+
+/* CONTAINER */
+.gallery-wrap {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADER */
+.gallery-header {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.gallery-header h1 {
+  font-family: "Noto Serif Kannada", serif;
+  font-size: 36px;
+  color: #1c1f4a;
+  margin-bottom: 14px;
+}
+
+.gallery-header p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ===============================
+   UNIFORM IMAGE GRID
+================================ */
+.gallery-grid-uniform {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+/* IMAGE CARD */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.16);
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* CAPTION OVERLAY */
+.gallery-item figcaption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(28,31,74,0.85),
+    rgba(28,31,74,0.15),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover figcaption {
+  opacity: 1;
+}
+
+/* ===============================
+   VIDEO SECTION
+================================ */
+.gallery-videos {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.gallery-videos h2 {
+  font-family: "Noto Serif Kannada", serif;
+  font-size: 30px;
+  color: #1c1f4a;
+  margin-bottom: 40px;
+}
+
+.video-grid {
+  display: grid;
+  gap: 26px;
+}
+
+@media (min-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.video-grid iframe {
+  width: 100%;
+  height: 220px;
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+  border: none;
+}
+
+/* ===============================
+   FULLSCREEN LIGHTBOX
+================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+.lightbox {
+  background: radial-gradient(
+    circle at center,
+    rgba(10,10,20,0.82),
+    rgba(5,5,15,0.96)
+  );
+}
+
+
+/* Active state */
+.lightbox.show {
+  display: flex;
+}
+
+/* Content */
+.lightbox-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: zoomIn 0.35s ease;
+}
+.lightbox-content img {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+  transition: transform 0.35s ease, transform-origin 0.2s ease;
+}
+
+/* Caption */
+.lightbox-content p {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #f2c96b;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  font-size: 34px;
+  color: #f2c96b;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ===============================
+   LIGHTBOX NAVIGATION
+================================ */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 42px;
+  color: rgba(242,201,107,0.85);
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 14px;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-nav.prev {
+  left: 20px;
+}
+
+.lightbox-nav.next {
+  right: 20px;
+}
+
+/* Hide arrows on small screens (swipe preferred) */
+@media (max-width: 768px) {
+  .lightbox-nav {
+    display: none;
+  }
+}
+/* ===============================
+   DOUBLE TAP ZOOM
+================================ */
+.lightbox-content img {
+  transition: transform 0.35s ease, transform-origin 0.2s ease;
+  cursor: zoom-in;
+}
+
+.lightbox-content img.zoomed {
+  transform: scale(2.2);
+  cursor: zoom-out;
+}

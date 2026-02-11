@@ -1,0 +1,178 @@
+/* ===============================
+   CONTACT PAGE – BASE
+================================ */
+.contact-page {
+  position: relative;
+  padding: 100px 20px 120px;
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #fbf7ef,
+    #f4ede2
+  );
+  overflow: hidden;
+}
+
+/* Background OM */
+.contact-om {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 340px;
+  color: rgba(201,162,77,0.06);
+  pointer-events: none;
+}
+
+/* Container */
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.contact-header {
+  text-align: center;
+  max-width: 620px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.contact-header h1 {
+  font-family: "Noto Serif Kannada", serif;
+  font-size: 36px;
+  color: #1c1f4a;
+  margin-bottom: 14px;
+}
+
+.contact-header p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ===============================
+   CARDS LAYOUT
+================================ */
+.contact-cards {
+  display: grid;
+  gap: 36px;
+  margin-bottom: 70px;
+}
+
+@media (min-width: 900px) {
+  .contact-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===============================
+   CARD BASE
+================================ */
+.contact-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.contact-card h3 {
+  font-family: "Noto Serif Kannada", serif;
+  font-size: 22px;
+  color: #1c1f4a;
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   INFO CARD
+================================ */
+.info-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.info-card .email {
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Actions */
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.icon-btn {
+  padding: 10px 18px;
+  border-radius: 22px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.icon-btn.phone {
+  background: #1c1f4a;
+  color: #fff;
+}
+
+.icon-btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.icon-btn.email {
+  border: 1px solid #c9a24d;
+  color: #1c1f4a;
+}
+
+/* ===============================
+   ADDRESS CARD
+================================ */
+.address-card p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* ===============================
+   MAP CARD
+================================ */
+.map-card {
+  text-align: center;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.map-hint {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
