@@ -797,3 +797,44 @@ body {
   fill: #1c1f4a;
 }
 
+.about-page .about-wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-page .about-text {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ABOUT PAGE STYLING */
+.about-page {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #faf7f2, #f0e6d2);
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-card {
+  background: white;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.about-card h2 {
+  text-align: center;
+  color: #1c1f4a;
+  margin-bottom: 20px;
+}
+
+.about-card p {
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
