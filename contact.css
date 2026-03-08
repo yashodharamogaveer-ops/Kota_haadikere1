@@ -110,27 +110,63 @@
   flex-wrap: wrap;
 }
 
+/* ===============================
+   ACTION BUTTONS
+================================ */
+
+.contact-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
 .icon-btn {
-  padding: 10px 18px;
-  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 50px;
   font-size: 14px;
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+.icon-btn i {
+  font-size: 16px;
+}
+
+/* Call */
 .icon-btn.phone {
   background: #1c1f4a;
   color: #fff;
 }
 
+.icon-btn.phone:hover {
+  background: #14173a;
+}
+
+/* WhatsApp */
 .icon-btn.whatsapp {
   background: #25d366;
   color: #fff;
 }
 
+.icon-btn.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* Email */
 .icon-btn.email {
-  border: 1px solid #c9a24d;
+  border: 2px solid #c9a24d;
   color: #1c1f4a;
+  background: transparent;
+}
+
+.icon-btn.email:hover {
+  background: #c9a24d;
+  color: #fff;
 }
 
 /* ===============================
